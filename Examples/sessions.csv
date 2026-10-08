@@ -1,0 +1,4 @@
+id,start,end,origin,isNap,quality,tags_json,source,externalID,edited,timeZoneID,stages_json
+99070988-3FC0-50BA-A100-1F4D1435CD46,2026-10-04T23:00:00Z,2026-10-05T07:00:00Z,manual,false,3,"[""stress""]",SleepLedger,,false,UTC,[]
+C9273DD9-C13D-5BEF-AEA6-8ED39D8BDA4D,2026-10-05T23:00:00Z,2026-10-06T07:00:00Z,manual,false,4,"[""exercise""]",SleepLedger,,false,UTC,[]
+D2ED9E94-48DE-51E7-A836-D521FA0C2DB1,2026-10-06T23:00:00Z,2026-10-07T07:00:00Z,manual,false,5,"[""exercise""]",SleepLedger,,false,UTC,[]

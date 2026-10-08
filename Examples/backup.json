@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "sessions": [
+    {
+      "id": "99070988-3FC0-50BA-A100-1F4D1435CD46",
+      "start": "2026-10-04T23:00:00Z",
+      "end": "2026-10-05T07:00:00Z",
+      "origin": "manual",
+      "isNap": false,
+      "quality": 3,
+      "tags": [
+        "stress"
+      ],
+      "source": "SleepLedger",
+      "externalID": null,
+      "edited": false,
+      "stages": [],
+      "timeZoneID": "UTC"
+    },
+    {
+      "id": "C9273DD9-C13D-5BEF-AEA6-8ED39D8BDA4D",
+      "start": "2026-10-05T23:00:00Z",
+      "end": "2026-10-06T07:00:00Z",
+      "origin": "manual",
+      "isNap": false,
+      "quality": 4,
+      "tags": [
+        "exercise"
+      ],
+      "source": "SleepLedger",
+      "externalID": null,
+      "edited": false,
+      "stages": [],
+      "timeZoneID": "UTC"
+    },
+    {
+      "id": "D2ED9E94-48DE-51E7-A836-D521FA0C2DB1",
+      "start": "2026-10-06T23:00:00Z",
+      "end": "2026-10-07T07:00:00Z",
+      "origin": "manual",
+      "isNap": false,
+      "quality": 5,
+      "tags": [
+        "exercise"
+      ],
+      "source": "SleepLedger",
+      "externalID": null,
+      "edited": false,
+      "stages": [],
+      "timeZoneID": "UTC"
+    }
+  ],
+  "steps": [
+    {
+      "day": "2026-10-06T00:00:00Z",
+      "count": 8200,
+      "source": "Synthetic iPhone"
+    }
+  ],
+  "settings": {
+    "goalHours": 8,
+    "reminderEnabled": false,
+    "reminderHour": 22,
+    "reminderMinute": 30,
+    "appearance": "system"
+  }
+}

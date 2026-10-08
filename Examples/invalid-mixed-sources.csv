@@ -1,0 +1,3 @@
+kind,start,end,source,value
+sleep,2026-10-07T23:00:00Z,2026-10-08T07:00:00Z,Watch A,core
+sleep,2026-10-07T23:00:00Z,2026-10-08T07:00:00Z,Watch B,core

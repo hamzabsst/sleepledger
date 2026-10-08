@@ -1,0 +1,67 @@
+name: Build iPhone IPA
+
+'on':
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 25
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Check project structure
+        run: python3 Scripts/validate_project.py
+
+      - name: Test Foundation core
+        run: |
+          set -o pipefail
+          swift test --package-path Core 2>&1 | tee core-test.log
+
+      - name: Compile unsigned iPhone app
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project SleepLedger.xcodeproj \
+            -scheme SleepLedger \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY='' \
+            build 2>&1 | tee ios-build.log
+
+      - name: Package IPA for local signing
+        run: |
+          mkdir -p build/ipa/Payload
+          cp -R build/Build/Products/Release-iphoneos/SleepLedger.app build/ipa/Payload/
+          cd build/ipa
+          ditto -c -k --keepParent Payload ../SleepLedger-unsigned.ipa
+          unzip -t ../SleepLedger-unsigned.ipa
+
+      - name: Upload unsigned IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: SleepLedger-unsigned
+          path: build/SleepLedger-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 7
+
+      - name: Upload test and build logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: SleepLedger-build-logs
+          path: |
+            core-test.log
+            ios-build.log
+          if-no-files-found: ignore
+          retention-days: 7

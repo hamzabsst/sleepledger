@@ -2,7 +2,7 @@
 
 A personal, local-first iPhone sleep journal. SwiftUI + SwiftData, iOS 17+, no HealthKit, server, paid account, or package dependencies. Apple Health is accessed only by user-created Shortcuts.
 
-**Build status:** source project prepared on Linux. No Swift/Xcode compiler is installed here. iOS compilation needs Xcode on a local or hosted Mac; local signing/installation can also use a third-party Linux sideloader. Compilation and iPhone behavior remain unverified. See [validation](Docs/VALIDATION.md). This is source code, not a pre-signed installable app.
+**Build status:** [GitHub Actions build #1](https://github.com/hamzabsst/sleepledger/actions/runs/37816137251) passed on 8 October 2026: 10 core tests passed and the unsigned arm64 iPhone Release app compiled with Xcode 16.4 / iPhoneOS 18.5 SDK (iOS 17 minimum). The unsigned IPA is available in that run’s artifacts. Local signing, installation and iPhone behavior remain untested. See [validation](Docs/VALIDATION.md).
 
 ## Short plan and stages
 
@@ -55,7 +55,7 @@ SleepLedger/
 
 ## Install on your iPhone
 
-**No Mac?** Use the included [GitHub Actions + Ubuntu/iloader guide](Docs/NO_MAC.md). The workflow builds an unsigned IPA on a hosted Mac, then you sign/install locally with a free Apple Account. It has not been run yet. The steps below are the alternative for direct Xcode installation.
+**No Mac?** Use the included [GitHub Actions + Ubuntu/iloader guide](Docs/NO_MAC.md). The workflow builds an unsigned IPA on a hosted Mac, then you sign/install locally with a free Apple Account. The first cloud build passed. The steps below are the alternative for direct Xcode installation.
 
 1. Copy the entire `SleepLedger` folder to a **Mac**. Use Xcode that supports your phone’s installed iOS version (minimum Xcode 15 for iOS 17, newer devices/OS usually require newer Xcode).
 2. Open `SleepLedger.xcodeproj`. Xcode → Settings → Accounts → add your free Apple Account.

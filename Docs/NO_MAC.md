@@ -10,7 +10,7 @@ iloader is a third-party sideloading tool whose official project supports Linux 
 
 No Apple credentials or signing certificate go into GitHub. You sign in yourself in iloader on your computer. The compiled IPA is not installable until locally signed.
 
-**Status:** workflow added and checked locally for YAML/shell structure. It has not been uploaded or run in GitHub, and no IPA has been produced yet. The first cloud run will perform the actual Swift tests and iOS compilation; compiler errors may require fixes before an artifact exists. Phone installation remains untested.
+**Status:** [build #1](https://github.com/hamzabsst/sleepledger/actions/runs/37816137251) passed on 8 October 2026 at source commit `50588228007e69c4c6bb069b7ba74ecd1aa65c62`. All 10 core tests passed; Xcode 16.4 / iPhoneOS 18.5 SDK compiled the arm64 iPhone Release app and packaged the unsigned IPA. GitHub artifacts expire after seven days; run the workflow again if needed. Phone signing and installation remain untested.
 
 ## 1. Put the project in a GitHub repository
 
